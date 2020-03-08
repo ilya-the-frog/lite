@@ -1,0 +1,2 @@
+class RktRate < ApplicationRecord
+end
