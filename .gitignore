@@ -29,3 +29,7 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+/log/
+Rocketbank_Currency_Converter-sandbox.p12
+/MCD_Sandbox_Rocketbank_Currency_Converter_API_Keys/
+/Rocketbank_Currency_Converter-sandbox.p12
