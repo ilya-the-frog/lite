@@ -1,3 +1,21 @@
-Hello there! <br>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/rEq1Z0bjdwc?start=4&autoplay=1" frameborder="0"; allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
-<%= puts @doc %>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1>Курсы, ебать!</h1>
+<br>
+<%= form_with(model: @mc, local: true) do |f| %>
+  <%= f.label "Дата" %>
+  <%= f.date_field :date, :value => Date.yesterday %>
+  Считаем за вчера, потому что курсы Mastercard на текущий день сразу не доступны
+  <br>
+  <%= f.label "Сумма" %>
+  <%= f.text_field :sum %>
+  <br>
+  <%= f.label "Валюта" %>
+  <%= f.text_field :curr %>
+  <a href="https://vk.cc/arBfzy" target="_blank"> 3-х буквенный код по ОКВ</a>
+  <br><br>
+  <%= f.submit "Посчитать!" %>
+<% end %>
