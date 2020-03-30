@@ -1,24 +1,7 @@
-# README
+# Валютный калькулятор для Рокетбанка
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Привет! Это мой первый самостоятельный проект, который я делаю сам, как чувствую, и как умею. Проект достаточно сложный для меня, так как здесь происходит много всего сразу.
 
-Things you may want to cover:
+Задача: брать курсы Рокетбанка и Mastercard и дружить их между собой, давая сотрудникам службы поддержки нужные данные.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+По состоянию на 30.03.2020 реализована относительно красивая форма для отправки данных, но бэк не работает.
