@@ -15,9 +15,9 @@ class RatesController < ApplicationController
 
   def create
     @rate = Rate.new(rate_params)
-    mcrate(@rate.params[:date], @rate.params[:curr], @rate.params[:sum])
-    @rate.mcamount = mcrate.response.get(data.crdhldBillAmt)
-    @rate.mcrate = mcrate.response.get(data.conversionRate)
+    mccalc(@rate.date, @rate.curr, @rate.sum)
+    @rate.mcamount = mccalc.response.get(data.crdhldBillAmt)
+    @rate.mcrate = mccalc.response.get(data.conversionRate)
     if @rate.save
       redirect_to @rate, notice: 'Посчиталось, епта'
     else
@@ -29,7 +29,7 @@ class RatesController < ApplicationController
     @rate = Rate.find(params[:id])
   end
 
-  def mcrate(date, curr, sum)
+  def mccalc(date, curr, sum)
     consumerKey = 'EFSrWArnQLR5J7XQ85AO7Kqt0KIbytH9R1Gt5W-n066b9f28!2627d9226b4e401ea54ce8ddacb3db4f0000000000000000' # You should copy this from "My Keys" on your project page
     keyFile = 'MS_Sandbox_API/Rocketbank_Currency_Converter-sandbox.p12' # e.g. /Users/yourname/project/sandbox.p12 | C:\Users\yourname\project\sandbox.p12
     keyAlias = 'keyalias' # For production: change this to the key alias you chose when you created your production key
