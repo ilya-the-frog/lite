@@ -25,12 +25,6 @@ class RatesController < ApplicationController
     end
   end
 
-  def initialize
-    date = @rate.date
-    сurr = @rate.curr
-    sum = @rate.sum
-  end
-
   def show
     @rate = Rate.find(params[:id])
   end
@@ -55,30 +49,14 @@ class RatesController < ApplicationController
       mapObj.set('transAmt', sum)
       response = ConversionRate.query(mapObj)
 
-      out(response, 'data.conversionRate'); #-->0.57
-      out(response, 'data.crdhldBillAmt'); #-->13.11
+      #out(response, 'data.conversionRate'); #-->0.57
+      #out(response, 'data.crdhldBillAmt'); #-->13.11
     rescue APIException => e
       err("HttpCode: #{e.getHttpCode}")
       err("Message: #{e.getMessage}")
       err("ReasonCode: #{e.getReasonCode}")
       err("Message: #{e.getSource}")
     end
-  end
-
-  def out(response, key)
-    puts "#key-->#{response.get(key)}"
-  end
-
-  def outObj(response, key)
-    puts "#key-->#{response[key]}"
-  end
-
-  def err(message)
-    puts message
-  end
-
-  def errObj(response, key)
-    puts "#key-->#{response.get(key)}"
   end
 
   private
