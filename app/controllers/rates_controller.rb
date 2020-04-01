@@ -15,7 +15,7 @@ class RatesController < ApplicationController
 
   def create
     @rate = Rate.new(rate_params)
-    mcrate(@rate.date, @rate.curr, @rate.sum)
+    mcrate(@rate.params[:date], @rate.params[:curr], @rate.params[:sum])
     @rate.mcamount = mcrate.response.get(data.crdhldBillAmt)
     @rate.mcrate = mcrate.response.get(data.conversionRate)
     if @rate.save
