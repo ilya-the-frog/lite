@@ -7,6 +7,10 @@
   <div class="col-md-6 col-md-offset-3">
     <h1 align="center">Курсы, ебать!</h1>
     <br>
+    <% flash.each do |key, message| %>
+      <p class="<%= key %>"><%= message %></p>
+    <% end %>
+    <br>
     <%= form_with(model: @rate, local: true) do |f| %>
       <%= f.label "Дата" %>
       <%= f.date_field :date, :value => Date.yesterday %>
