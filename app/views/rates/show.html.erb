@@ -1,0 +1,10 @@
+
+<% flash.each do |key, message| %>
+  <p class="<%= key %>"><%= message %></p>
+<% end %>
+
+<%= @rate.date %>,
+<%= @rate.sum %>,
+<%= @rate.curr %>
+<%= @rate.mcrate %>
+<%= @rate.mcamount %>
