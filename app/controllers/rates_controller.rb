@@ -20,16 +20,16 @@ class RatesController < ApplicationController
   end
 
   def create
+    mcrate(@rate.date, @rate.curr, @rate.sum)
+    @rate.mcamount = mcrate.response.get(data.crdhldBillAmt)
+    @rate.mcrate = mcrate.response.get(data.conversionRate)
+
     @rate = Rate.new(rate_params)
     if @rate.save
       redirect_to @rate, notice: 'Посчиталось, епта'
     else
       render root_path,  notice: 'Чет хуйня'
     end
-
-    mcrate(@rate.date, @rate.curr, @rate.sum)
-    @rate.mcamount = mcrate.response.get(data.crdhldBillAmt)
-    @rate.mcrate = mcrate.response.get(data.conversionRate)
   end
 
   def show
