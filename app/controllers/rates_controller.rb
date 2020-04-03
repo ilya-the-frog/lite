@@ -15,10 +15,9 @@ class RatesController < ApplicationController
 
   def create
     @rate = Rate.new(rate_params)
-    data1 = mccalc(@rate.date, @rate.curr, @rate.sum)
-    #byebug
-    @rate.mcamount = data1.get('data')['crdhldBillAmt']
-    @rate.mcrate = data1.get('data')['conversionRate']
+    pidr = mccalc(@rate.date, @rate.curr, @rate.sum)
+    @rate.mcamount = pidr.get('data')['crdhldBillAmt']
+    @rate.mcrate = pidr.get('data')['conversionRate']
     if @rate.save
       redirect_to @rate, notice: 'Посчиталось, епта'
     else
