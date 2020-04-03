@@ -1,10 +1,11 @@
-
+<br>
 <% flash.each do |key, message| %>
   <p class="<%= key %>"><%= message %></p>
 <% end %>
 
-<%= @rate.date %>,
-<%= @rate.sum %>,
-<%= @rate.curr %>
-<%= @rate.mcrate %>
-<%= @rate.mcamount %>
+<div class="col-md-6 col-md-offset-3">
+По курсу на <%= @rate.date %>, <br>
+<%= @rate.sum %> <%= @rate.curr %>
+<br><br><br>
+Будет стоить <%= @rate.mcamount %> по курсу <%= @rate.mcrate %>
+</div>
