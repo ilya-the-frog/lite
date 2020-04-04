@@ -16,13 +16,13 @@ ActiveRecord::Schema.define(version: 2020_04_01_211532) do
   enable_extension "plpgsql"
 
   create_table "rates", force: :cascade do |t|
+    t.date "date"
     t.string "sum"
     t.string "curr"
     t.string "mcrate"
     t.string "mcamount"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.date "date"
   end
 
 end
