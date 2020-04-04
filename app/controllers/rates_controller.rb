@@ -7,7 +7,8 @@ class RatesController < ApplicationController
   include MasterCard::Core::Exceptions
   include MasterCard::API::CurrencyConversion
 
-  controller do
+  #controller do
+
     def index; end
 
     def new
@@ -60,11 +61,12 @@ class RatesController < ApplicationController
       end
     end
 
-  end
+    #end
 
   private
 
-  def rate_params
-    params.require(:rate).permit(:date, :sum, :curr)
-  end
+    def rate_params
+      params.require(:rate).permit(:date, :sum, :curr)
+    end
+
 end
