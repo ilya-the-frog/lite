@@ -7,7 +7,7 @@ class RatesController < ApplicationController
   include MasterCard::Core::Exceptions
   include MasterCard::API::CurrencyConversion
 
-  #controller do
+  # controller do
 
     def index; end
 
