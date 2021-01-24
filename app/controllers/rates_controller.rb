@@ -47,11 +47,11 @@ class RatesController < ApplicationController
       mapObj = RequestMap.new
       mapObj.set('fxDate', date) # 2019-09-30
       # ver true
-      # mapObj.set('transCurr', curr) # ISK
-      # mapObj.set('crdhldBillCurr', 'USD')
+      mapObj.set('transCurr', curr) # ISK
+      mapObj.set('crdhldBillCurr', 'USD')
       # ver false:
-      mapObj.set('transCurr', 'USD') # ISK
-      mapObj.set('crdhldBillCurr', curr)
+      # mapObj.set('transCurr', 'USD') # ISK
+      # mapObj.set('crdhldBillCurr', curr)
       mapObj.set('bankFee', '0')
       mapObj.set('transAmt', sum) # 100
       response = ConversionRate.query(mapObj)
